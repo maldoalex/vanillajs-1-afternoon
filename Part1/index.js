@@ -2,20 +2,21 @@ console.log("hello");
 
 let board = [];
 
-function play(clickedID) {
+function play(clickedId) {
   let playerSpan = document.getElementById("player");
 
-  let clickedBox = document.getElementById(clickedID);
+  let clickedBox = document.getElementById(clickedId);
 
   if (playerSpan.innerText === "X") {
     playerSpan.innerText = "O";
     clickedBox.innerText = "X";
-    board[clickedID] = "X";
+    board[clickedId] = "X";
   } else {
     playerSpan.innerText = "X";
     clickedBox.innerText = "O";
-    board[clickedID] = "O";
+    board[clickedId] = "O";
   }
+  console.log(board);
 
   let topL = board[0];
   let topC = board[1];
@@ -52,7 +53,7 @@ function play(clickedID) {
     alert("winner");
   }
   //diagonal
-  else if (topL !== undefined && topL === middleC && bottomR) {
+  else if (topL !== undefined && topL === middleC && topL === bottomR) {
     alert("winner");
   } else if (bottomL !== undefined && bottomL === middleC && bottomL === topR) {
     alert("winner");
